@@ -14,6 +14,7 @@ public class ContainerWithMostWater {
 		int right=heights.length-1;
 		int currentArea=0;
 		int maxArea=0;
+		
 		int minHeight=0;
 		
 		while(left<right)
