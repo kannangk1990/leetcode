@@ -12,15 +12,29 @@ public class MinRotatedSortedArray {
 
 	}
 	
+	/*
+	 * Need to create algorithm with O(log n) run time which can be achieved using
+	 * binary search only
+	 */
 	public static int numRoatedSortedArray(int[] nums)
 	{
-		for(int i=1;i<nums.length;i++)
+		int start=0;
+		int end=nums.length-1;
+		int mid=0;
+		while(start<end)
 		{
-			if(nums[i]<nums[i-1])
-				return nums[i];
+			mid=start+(end-start)/2;
+			if(nums[mid]>nums[end])
+			{
+				start=mid+1;
+			}
+			else
+			{
+				end=mid;
+			}
 		}
 		
-		return nums[0];
+		return nums[start];
 	}
 
 }
