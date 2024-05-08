@@ -28,12 +28,13 @@ public class SearchInRotatedSortedArray {
 		int start=0;
 		int end=nums.length-1;
 		int mid=0;
+		//<= is needed to handle only 2 elements in array
 		while(start<=end)
 		{
 			mid=(start+end)/2;
 			if(nums[mid]==target)
 				return mid;
-			//<= is needed to handle only 2 elements in array
+			
 			if(nums[start]<=nums[mid])
 			{
 				if(nums[mid]>target && nums[start]<=target)
